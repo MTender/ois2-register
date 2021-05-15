@@ -8,7 +8,7 @@ def register(username, password):
     time.sleep(5)
 
     try:
-        driver.find_element_by_link_text('Registreeringud').click()
+        driver.find_element_by_xpath("// div[contains(text(), 'Registreeringud')]").click()
     except NoSuchElementException:
         driver.find_element_by_xpath("//button[@color='primary']").click()
         time.sleep(2)
@@ -16,22 +16,22 @@ def register(username, password):
         driver.find_element_by_id("password").send_keys(password)
         driver.find_element_by_xpath("//button[@type='submit']").click()
         time.sleep(10)
-        driver.find_element_by_link_text('Registreeringud').click()
+        driver.find_element_by_xpath("// div[contains(text(), 'Registreeringud')]").click()
 
     time.sleep(5)
     while True:
         try:
             driver.find_element_by_id('mat-checkbox-1').click()
             time.sleep(5)
-            target = driver.find_elements_by_xpath("//button[@class='full-width mat-raised-button "
-                                                   "mat-button-base mat-primary ng-star-inserted']")
+            target = driver.find_elements_by_xpath("//button[@class='mat-focus-indicator full-width mat-raised-button mat-button-base mat-primary mat-button-disabled ng-star-inserted']")
             target[1].click()
         except IndexError:
             print("Registreeritud!")
             break
         except NoSuchElementException:
             driver.refresh()
-            time.sleep(10)
+        driver.refresh()
+        time.sleep(10)
 
 
 # Muuda ainult j2rgmist kahte rida
