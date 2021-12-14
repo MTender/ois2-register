@@ -21,10 +21,12 @@ def register(username, password):
 	time.sleep(5)
 	while True:
 		try:
-			driver.find_element_by_id('mat-checkbox-1').click()
+			driver.find_element_by_xpath("// mat-chip[contains(text(), ' 2021/22 kevad ')]").click()
+			time.sleep(2)
+			driver.find_element_by_id('mat-checkbox-2').click()
 			time.sleep(5)
 			target = driver.find_elements_by_xpath(
-				"//button[@class='mat-focus-indicator full-width mat-raised-button mat-button-base mat-primary mat-button-disabled ng-star-inserted']")
+				"// span[contains(text(), 'Registreeru õppeainetele ')]")
 			target[1].click()
 		except IndexError:
 			print("Registreeritud!")
