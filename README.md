@@ -1,4 +1,4 @@
-# Registreeri_ois2
+# ois2-register
 Ma ei garanteeri, et programm töötab ootuspäraselt ning ma ei vastuta õppeinfosüsteemis või mujal programmi kasutamise tagajärjel juhtunu eest.
 
 Et programmil oleks võimalik õigesti töötada peab kõigile planeerijasse lisatud ainetele registreerumine avanema samaaegselt (st kõik eeldusained on läbitud). Ülejäänud õppeained tuleks programmi töö ajaks ajutiselt planeerijast eemaldada.
