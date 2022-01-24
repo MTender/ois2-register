@@ -3,7 +3,7 @@ Ma ei garanteeri, et programm töötab ootuspäraselt ning ma ei vastuta õppein
 
 Et programmil oleks võimalik õigesti töötada peab kõigile planeerijasse lisatud ainetele registreerumine avanema samaaegselt (st kõik eeldusained on läbitud). Ülejäänud õppeained tuleks programmi töö ajaks ajutiselt planeerijast eemaldada.
 
-Programmi käivitamiseks on vajalikud Mozilla Firefox ja [geckodriver](https://github.com/mozilla/geckodriver).
-Samuti peab installima Seleniumi (sellega saab PyCharm ise hakkama).
+Programmi käivitamiseks on vajalikud Mozilla Firefox ja [geckodriver](https://github.com/mozilla/geckodriver/releases) (minimaalne versioon 0.30.0).
+Samuti peab installima Selenium 4 (sellega saab PyCharm ise hakkama).
 
 Failid *geckodriver.exe* ja *regaja.py* peavad asuma samas kaustas.
