@@ -1,32 +1,33 @@
+import time
+
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
-import time
+from selenium.webdriver.common.by import By
 
 
 def register(username, password):
 	driver.get('https://ois2.ut.ee/')
 	time.sleep(5)
-
+	
 	try:
-		driver.find_element_by_xpath("//div[contains(text(), 'Registreeringud')]").click()
+		driver.find_element(By.XPATH, "//div[contains(text(), 'Registreeringud')]").click()
 	except NoSuchElementException:
-		driver.find_element_by_xpath("//button[@color='primary']").click()
+		driver.find_element(By.XPATH, "//button[@color='primary']").click()
 		time.sleep(2)
-		driver.find_element_by_id("username").send_keys(username)
-		driver.find_element_by_id("password").send_keys(password)
-		driver.find_element_by_xpath("//button[@type='submit']").click()
+		driver.find_element(By.ID, "username").send_keys(username)
+		driver.find_element(By.ID, "password").send_keys(password)
+		driver.find_element(By.XPATH, "//button[@type='submit']").click()
 		time.sleep(10)
-		driver.find_element_by_xpath("// div[contains(text(), 'Registreeringud')]").click()
-
+		driver.find_element(By.XPATH, "// div[contains(text(), 'Registreeringud')]").click()
+	
 	time.sleep(5)
 	while True:
 		try:
-			driver.find_element_by_xpath("// mat-chip[contains(text(), ' 2021/22 kevad ')]").click()
+			driver.find_element(By.XPATH, "// mat-chip[contains(text(), ' 2021/22 kevad ')]").click()
 			time.sleep(2)
 			driver.find_element_by_id('mat-checkbox-1').click()
 			time.sleep(5)
-			target = driver.find_elements_by_xpath(
-				"// span[contains(text(), 'Registreeru õppeainetele ')]")
+			target = driver.find_elements(By.XPATH, "// span[contains(text(), 'Registreeru õppeainetele ')]")
 			target[1].click()
 		except IndexError:
 			print("Registreeritud!")
