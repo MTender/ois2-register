@@ -25,7 +25,7 @@ def register(username, password):
 		try:
 			driver.find_element(By.XPATH, "// mat-chip[contains(text(), ' 2021/22 kevad ')]").click()
 			time.sleep(2)
-			driver.find_element_by_id('mat-checkbox-1').click()
+			driver.find_element(By.ID, 'mat-checkbox-1').click()
 			time.sleep(5)
 			target = driver.find_elements(By.XPATH, "// span[contains(text(), 'Registreeru õppeainetele ')]")
 			target[1].click()
